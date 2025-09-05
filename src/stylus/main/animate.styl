@@ -1,0 +1,178 @@
+.fade-in 
+    animation: fadeIn 1s ease-out;
+
+.slide-up 
+    animation: slideUp 0.8s ease-out;
+
+.bounce-in 
+    animation: bounceIn 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+
+.rotate-in 
+    animation: rotateIn 0.8s ease-out;
+
+.swing 
+    animation: swing 1s ease-in-out infinite;
+
+.shake 
+    animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both;
+
+.pulse 
+    animation: pulse 2s infinite;
+
+.float 
+    animation: float 3s ease-in-out infinite;
+
+// анимация при первый посещение 
+@keyframes fadeInUp 
+    from 
+        opacity: 0;
+        transform: translateY(60px);
+    
+    to 
+        opacity: 1;
+        transform: translateY(0);
+
+// for abour 
+@keyframes rotate 
+    0%  
+        transform: rotate(0deg); 
+    100%  
+        transform: rotate(360deg); 
+
+@keyframes fadeIn 
+    from 
+        opacity: 0; 
+    to 
+        opacity: 1; 
+
+
+@keyframes slideUp 
+    from 
+        opacity: 0;
+        transform: translateY(30px);
+    
+    to 
+        opacity: 1;
+        transform: translateY(0);
+    
+@keyframes bounceIn 
+    0% 
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    
+    20% 
+        transform: scale3d(1.1, 1.1, 1.1);
+    
+    40% 
+        transform: scale3d(0.9, 0.9, 0.9);
+    
+    60% 
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    
+    80% 
+        transform: scale3d(0.97, 0.97, 0.97);
+    
+    100% 
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+
+@keyframes rotateIn 
+    from 
+        transform-origin: center;
+        transform: rotate3d(0, 0, 1, -200deg);
+        opacity: 0;
+    
+    to 
+        transform-origin: center;
+        transform: none;
+        opacity: 1;
+    
+@keyframes swing 
+    20%  
+        transform: rotate3d(0, 0, 1, 15deg); 
+    40%  
+        transform: rotate3d(0, 0, 1, -10deg); 
+    60%  
+        transform: rotate3d(0, 0, 1, 5deg); 
+    80%  
+        transform: rotate3d(0, 0, 1, -5deg); 
+    to  
+        transform: rotate3d(0, 0, 1, 0deg); 
+
+@keyframes shake 
+    10%, 90%  
+        transform: translate3d(-1px, 0, 0); 
+    20%, 80%  
+        transform: translate3d(2px, 0, 0); 
+    30%, 50%, 70%  
+        transform: translate3d(-4px, 0, 0); 
+    40%, 60%  
+        transform: translate3d(4px, 0, 0); 
+
+
+/* Scroll Animations */
+.animate-on-scroll 
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+
+
+.animate-on-scroll.animated 
+    opacity: 1;
+    transform: translateY(0);
+
+/* Luxury Effects */
+.luxury-glow 
+    position: relative;
+
+.luxury-glow::before 
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, clr(prim), clr(second_3), clr(prim));
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+.luxury-glow:hover::before 
+    opacity: 1;
+
+/* Loading Animation */
+.loading 
+    position: relative;
+    overflow: hidden;
+
+.loading::after 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, clrgb(prim, .3), transparent);
+    animation: loading 1.5s infinite;
+
+@keyframes loading 
+    0%  
+        left: -100%; 
+    100%  
+        left: 100%; 
+
+
++below(t)
+    .mortgage-help
+        order:-1;
+    
+    .coderBtn
+        display: block;
+        width: 100%;
+
++below(m)
+    .animated-logo
+        width: 120px;
+    

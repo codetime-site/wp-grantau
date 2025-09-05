@@ -1,0 +1,77 @@
+
+.modal 
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: clrgb(blck, 0.8);
+    backdrop-filter: blur(5px);
+
+
+.modal-content 
+    background: linear-gradient(135deg, clr(blck_2), clrgb(blck,.5));
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    border: 1px solid clrgb(prim, 0.3);
+    animation: modalSlideIn 0.3s ease-out;
+
+
+@keyframes modalSlideIn 
+    from 
+        opacity: 0;
+        transform: translateY(-50px);
+    
+    to 
+        opacity: 1;
+        transform: translateY(0);
+    
+
+
+.close 
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 2rem;
+    color:clr(prim)
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+
+.close:hover 
+    color:clr(prim)
+
+
+.contact-form .form-group 
+    margin-bottom: 1.5rem;
+
+
+.contact-form input,
+.contact-form textarea 
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid clrgb(prim, 0.3);
+    border-radius: 10px;
+    background: clrgb(second, 0.05);
+    color:clr(second);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+
+.contact-form input:focus,
+.contact-form textarea:focus 
+    outline: none;
+    border-color: clr(prim)
+    box-shadow: 0 0 20px clrgb(prim, 0.3);
+
+
+.contact-form textarea 
+    resize: vertical;
+    min-height: 100px;
+

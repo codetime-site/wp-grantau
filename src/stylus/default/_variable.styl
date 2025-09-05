@@ -1,0 +1,59 @@
+colors = {
+    prim: #d4af37,
+    second: #fff,
+    second_2: #e0e0e0,
+    second_3: #f4e8c1
+    dark_yel:#ff9600,
+    yel3:#ffe699,
+    blck:#0c0b0b,
+    blck_2:#1a1a1a,
+    blck_3:#252525,
+    whatsapp: #25D366,
+    telegram: #229ED9,
+    phone: #25d266
+}
+
+// зазмеры для адаптация 
+// шрифт определяет специальный код внизу 
+fonts = {
+    header: 'Oswald'
+    prim: 'Montserrat' sans-serif
+    icon: "fontello" sans-serif
+}
+
+// определяем переменный  
+:root
+    // определяем цвета  
+    for name, color in colors 
+        --main_{name}:color
+        --main_hex_{name}: unquote(join(", ", red(color) green(color) blue(color)))
+    
+    // определяем шрифт
+    for name, font in fonts 
+        --font_{name}:font
+
+    --speed:05s
+    --degree_sec:135deg
+
+// определяем размеры  
+extraLarge = 1400px
+el = extraLarge
+
+large = 1200px
+l = large
+
+desktop = 1024px
+d = desktop
+
+tablet = 768px
+t = tablet
+
+mobile = 568px
+m = mobile
+
+smallMobile = 480px
+sm = smallMobile
+
+extraSmallMobile = 380px
+esm = extraSmallMobile
+

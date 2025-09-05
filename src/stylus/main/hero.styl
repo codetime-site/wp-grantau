@@ -1,0 +1,119 @@
+.hero-section 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 0
+
+// обший контент 
+.hero-content 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
+    gap: 4em
+    align-items: center;
+
+// left 
+div.hero-text 
+    padding-right: 2em
+
+.hero-title 
+    font-size: 3em
+    color clr(second);
+    animation: fadeInUp 1s ease-out;
+
+.hero-description 
+    color clr(second_2);
+    margin-bottom: 2em
+    animation: fadeInUp 1s ease-out 0.2s both;
+
+.hero-buttons 
+    display: flex;
+    gap: 1em
+    margin-bottom: 2em
+    animation: fadeInUp 1s ease-out 0.4s both;
+
+// right 
+.hero-image-container 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+.hero-house-image 
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+
+.hero-house-image:hover 
+    transform: scale(1.05);
+
+.hero-bottom 
+    margin-top: 3em
+
+.hero-contact 
+    display: flex;
+    gap: 2em
+    align-items: end;
+
+.phone-section, .social-section 
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em
+
+.social-section
+    flex-direction: row
+
+.social-section a
+    font-size: 2em
+
+.phone-label, .social-label 
+    font-size: 0.9em
+    color clr(prim)
+    font-weight: 600;
+    letter-spacing: 1px;
+
+.phone-number 
+    font-weight: 700;
+    color:clr(second)
+    transition: all .3s
+
+.phone-number:hover 
+    color clr(prim)
+    transform: scale(1.2)
+
+.social-handle 
+    font-size: 1em
+    color clr(second_2);
+
++below(desktop)
+    .hero-title
+        font-size: 2.5em
+
+
++below(tablet)
+        
+    .hero-content 
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2em
+    
+    .hero-title 
+        font-size: 2em
+        line-height: 1.5em
+    
+    .hero-buttons 
+        flex-direction: column;
+        align-items: center;
+    
+    .hero-contact 
+        flex-direction: column;
+        gap: 2em
+        text-align: center;
+    
++below(smallMobile)
+
+    .hero-title 
+        font-size: 1.5em
+    
+    .hero-text 
+        text-align: left;

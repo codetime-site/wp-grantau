@@ -1,0 +1,254 @@
+.header 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: clrgb(blck, .95)
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid clrgb(prim, 0.2);
+    transition: all 0.3s ease;
+
+.header-content 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 0;
+
+// logo
+.logo-section 
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+.logo-icon 
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 3s ease-in-out infinite;
+
+.logo-icon i 
+    font-size: 30px;
+    color: clr(blck)
+    animation: pulse 2s infinite ease-in-out;
+
+
+@keyframes float 
+    0%, 100%  
+        transform: translateY(0px); 
+    50%  
+        transform: translateY(-10px); 
+
+.brand-name 
+    font-family: fnt(header)
+    font-size: 1.8rem;
+    margin: 0;
+    text-align: center;
+
+
+.brand-slogan 
+    font-family: fnt(prim)
+    font-size: 0.9rem;
+    color clr(prim)
+    margin: 0;
+    opacity: 0.8;
+
+.nav-menu ul 
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+
+.nav-menu a 
+    color clr(second);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    animSubLine()
+    
+.contact-info 
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+
+.phone 
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color clr(prim)
+    font-weight: 600;
+
+
+.social-links 
+    display: flex;
+    flex-direction: row
+    gap: 0.5rem;
+    align-items: center;
+
+.social-links__top a 
+    order 2
+
+.social-links__btm 
+    flex();
+    justify-content: center
+    
+
+
+.social-link 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color clr(second);
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+.social-link.phone i  
+    display: none
+
+header
+    .social-link i
+        font-size: 1.5em
+    
+.social-link > i
+    color: clr(phone) 
+
+
+.social-link .fontello-phone-call
+    color clr(phone)
+
+.social-link .fontello-whatsapp
+    color clr(whatsapp)
+
+.social-link .fontello-telegram
+    color clr(telegram)
+
+
+.social-link.telegram,
+.social-link.whatsapp
+    background: unset;
+
+.social-link:hover 
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px clrgb(blck, 0.3);
+
+.mobile-menu-toggle 
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+
+.mobile-menu-toggle span 
+    width: 25px;
+    height: 3px;
+    background:  clr(prim);
+    transition: all 0.3s ease;
+
++below(d)
+    .brand-name
+        font-size: 1.5em
+    
+    .brand-slogan
+        font-size: .8em
+
++below(938px)
+    .nav-menu ul
+        gap 1em
+
++below(876px)
+    .nav-menu a
+        font-size: .8em
++below(t)
+    .container
+        padding: 0 38px;
+    
+    .header-content
+        flex-wrap: nowrap;
+        gap: 1em;
+        
+    .nav-menu
+        display: none;
+    
+    .mobile-menu-toggle
+        display: flex;
+    
+    .social-link.phone 
+        i  
+            display: none
+        p 
+            display: block
+    
+    .social-links, .social-links__btm
+        flex-direction: row
+        gap 5px
+
+    .contact-info.coderIcon
+        justify-self: unset;
+        margin-left: 124px;
+
+    button.mobile-menu-toggle
+        width: max-content;
+        background: none;
+        box-shadow: none;
+    
+
++below(631px)
+    .social-link.phone 
+        i  
+            display: block
+        p 
+            display: none
+
++below(m)
+    .brand-text p  
+        display: none
+    
+    .brand-name
+        line-height: unset;
+    
+    .contact-info.coderIcon
+        margin-left: 120px;
+
+    .nav-menu, .contact-info .coderIcon
+        gap 5px
+
+
++below(494px)
+    .contact-info.coderIcon
+        margin-left: 88px;
+
++below(454px)
+    .contact-info.coderIcon
+        margin-left: 52px;
+
+
++below(422px)
+    .contact-info.coderIcon
+        margin-left: 2em;
+
++below(384px)
+    .contact-info.coderIcon
+        margin-left: 4em;
+
+    .logo-section
+        flex-direction: column
+        gap 2px
+
++below(esm)
+    .logo-icon 
+        width: 47px;
+        height: 29px;
+
+    .contact-info.coderIcon
+        margin-left: 4em;
+
++below(322px)
+    .contact-info.coderIcon
+        margin-left: 1em;
+// +below(smallMobile)
+

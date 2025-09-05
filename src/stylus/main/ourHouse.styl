@@ -1,0 +1,43 @@
+
+.company-logo-animated 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+
+.houses-gallery 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+
+.house-item 
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px clrgb(blck, 0.5);
+    transition: all 0.3s ease;
+
+.house-item:hover 
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px clrgb(blck, 0.7);
+
+.house-item img 
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+.house-item:hover img 
+    transform: scale(1.1);
+
++below(t)
+    .houses-gallery 
+        grid-template-columns: repeat(2, 1fr)
+    
+    .house-variants 
+        flex-direction: row;
+        gap: 1rem;
+    
+    

@@ -1,0 +1,179 @@
+.gift-section 
+    position: relative;
+    overflow: hidden;
+
+.gift-section::before 
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&h=600&fit=crop') center/cover;
+    opacity: 0.1;
+    z-index: -1;
+
+.btn-calculate 
+    background: linear-gradient(45deg, clr(prim), clr(second_3), clr(prim));
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    color: clr(blck)
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0 10px 20px clrgb(prim, 0.3);
+
+.btn-calculate:hover 
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px clrgb(prim, 0.5);
+
+.gift-content 
+    grid(2)
+    gap: 3em;
+    align-items: flex-start;
+
+.calculator-block 
+    background: clrgb(prim, 0.05);
+    border: 1px solid clrgb(prim, 0.2);
+    border-radius: 15px;
+    padding: 2.5em;
+    box-shadow: 0 15px 30px clrgb(blck, .3);
+    animation: fadeIn 1s ease-out;
+
+.calculator-block h2 
+    margin-bottom: 1.5em;
+    color clr(prim)
+
+.calculator-options 
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    margin-bottom: 2em;
+
+.calc-option 
+    flex(1)
+    gap: 0.5em;
+
+.calc-option label 
+    color clr(prim)
+    font-weight: 500;
+
+.calc-option select,
+.calc-option input 
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid clrgb(prim, 0.3);
+    background: clrgb(second, 0.05);
+    color clr(second);
+    font-family: fnt(prim)
+    transition: all 0.3s ease;
+
+.calc-option select:focus,
+.calc-option input:focus 
+    outline: none;
+    border-color: clr(prim);
+    box-shadow: 0 0 10px clrgb(prim, 0.3);
+
+.calculator-block p 
+    margin-bottom: 2em;
+    color clr(second_2);
+
+@keyframes gradient 
+    0%  
+        background-position: 0% 50%; 
+    50%  
+        background-position: 100% 50%; 
+    100%  
+        background-position: 0% 50%; 
+
+.gift-block h2 
+    margin-bottom: 1.5em;
+    color clr(prim)
+
+option
+    background-color: clrgb(blck_3, .5)
+
+.gift-block p 
+    margin-bottom: 2em;
+    color: clr(second_2);
+
+.gift-image:hover 
+    transform: scale(1.05);
+
+.gift-buttons 
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+
+.gift-buttons button 
+    width: 100%
+
+.gift-image 
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+    display: block;
+    max-width: 300px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+
+.form-group 
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1em;
+
+.form-group input 
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid clrgb(prim, 0.3);
+    border-radius: 25px;
+    background: clrgb(second, 0.05);
+    color clr(second);
+    font-size: 1em;
+    transition: all 0.3s ease;
+
+.form-group input:focus 
+    outline: none;
+    border-color: clr(prim);
+    box-shadow: 0 0 20px clrgb(prim, 0.3);
+
+.form-group input::placeholder 
+    color: clrgb(second, 0.6);
+
+.gift-block 
+    background: clrgb(second, 0.05);
+    border: 1px solid clrgb(prim, 0.2);
+    border-radius: 15px;
+    padding: 2.5em;
+    box-shadow: 0 15px 30px clrgb(blck, .3);
+    animation: fadeIn 1s ease-out 0.3s both;
+
+.gift-visual 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    margin-bottom: 2em;
+    border-radius: 10px;
+    overflow: hidden;
+
++below(d)
+    .gift-image
+        max-width 188px
+
++below(t)
+
+    .gift-content 
+        grid-template-columns: 1fr;
+        text-align: center;
+        align-items: center
+        
+        img
+            text-align: center
+    
++below(m)
+    .gift-visual
+        width 186px
+        justify-self: center
+    
+    
