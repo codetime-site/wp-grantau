@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize all animations and interactions
     initScrollAnimations();
     initMobileMenu();
-    initCalculator();
+    // initCalculator();
     initModal();
     initFormHandlers();
     initLazyLoading();
