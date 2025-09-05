@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:css": "stylus  stylus/start.styl -o ../public_html/assets/css/style.min.css  ",
-    "build:watch": "stylus -w -c --sourcemap-inline stylus/start.styl -o ../public_html/assets/css/style.min.css",
+    "build:css": "stylus  stylus/start.styl -o ../public_html/wp-content/themes/grantau/assets/css/style.min.css",
+    "build:watch": "stylus -w -c --sourcemap-inline stylus/start.styl -o ../public_html/wp-content/themes/grantau/assets/css/style.min.css",
     "build": "webpack --config webpack.config.js"
   },
   "keywords": [],
