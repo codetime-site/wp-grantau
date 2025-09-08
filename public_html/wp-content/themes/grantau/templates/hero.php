@@ -1,16 +1,20 @@
-<?php $btn = get_sub_field('btn');?>
-<?php $img = get_sub_field('img');?>
+<?php 
+$title = get_query_var('title');
+$subscribe = get_query_var('subscribe');
+$btn = get_sub_field('btn');
+$img = get_sub_field('img');?>
 
 <div class="hero-content">
 
     <div class="hero-text">
-        <h2 class="hero-title">Строительство <br> домов в Казани и Республике <br> Татарстан</h2>
-        <p class="hero-description">
-            Надежность и качество наших коттеджей — результат многолетнего опыта и настоящей страсти к
-            своему делу.
-            Во главе компании стоит строитель практик, для которого каждый дом — личная гордость и дело всей
-            жизни.
-        </p>
+        <?php if($title):?>
+            <h2 class="hero-title"><?php  out_content($title);?></h2>
+        <?php endif;?>
+        
+        <?php if($subscribe):?>
+            <p class="hero-description"><?php  out_content($subscribe);?> </p>
+        <?php endif;?>
+
         <div class="hero-buttons">
             <button class="btn btn-primary" onclick="openCalculator()">
                 <?php echo esc_html( $btn ?: 'Click' );?>

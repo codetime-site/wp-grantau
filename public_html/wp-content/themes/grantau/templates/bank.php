@@ -1,42 +1,38 @@
 <?php
-$dir = "assets/img/bank/";
-$files = glob($dir . "*.png");
+$title = get_sub_field('title');
+$sub_title = get_sub_field('sub_title');
+$btn = get_sub_field('btn');
 ?>
-<section class="bank-partners-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Наши банки-партнёры</h2>
-        </div>
-
-        <div class="bank-partners-flex">
-            <div class="banks-column">
-                <div class="banks-grid">
-                    <?php if ($files): ?>
-                        <?php foreach ($files as $file): ?>
-                            <div class="bank-logo">
-                                <div class="bank-icon">
-                                    <img src="<?php echo $file; ?>" alt="">
-                                </div>
+<div class="bank-partners-flex">
+    <?php if (have_rows('rep_img')): ?>
+        <div class="banks-column">
+            <div class="banks-grid">
+                <?php while (have_rows('rep_img')):
+                    the_row(); ?>
+                    <?php $img = get_sub_field('img');
+                    if ($img): ?>
+                        <div class="bank-logo">
+                            <div class="bank-icon">
+                                <img src="<?php out_content($img); ?>" alt="">
                             </div>
-                        <?php endforeach ?>
+                        </div>
                     <?php endif; ?>
-                </div>
-            </div>
-            <div class="mortgage-help">
-                <h3>Поможем с ипотекой</h3>
-                <p>Мы аккредитованы в крупных банках страны и поможем Вам в короткие сроки получить ипотеку на
-                    строительство дома по минимальным ставкам.</p>
-                <ul class="mortgage-benefits">
-                    <li><i class="fas fa-check-circle"></i> Ипотека от 5.5% годовых</li>
-                    <li><i class="fas fa-check-circle"></i> Быстрое одобрение</li>
-                    <li><i class="fas fa-check-circle"></i> Минимальный пакет документов</li>
-                    <li><i class="fas fa-check-circle"></i> Работаем с материнским капиталом</li>
-                </ul>
-                <button class="btn btn-primary" onclick="openContactForm()">
-                    <i class="fas fa-phone"></i>
-                    Свяжитесь с нами
-                </button>
+                <?php endwhile; ?>
             </div>
         </div>
+    <?php endif; ?>
+    <div class="mortgage-help">
+        <h2><?php echo esc_html($title ?: " "); ?> </h2>
+
+        <?php if ($sub_title): ?>
+            <?php out_content($sub_title); ?>
+        <?php endif; ?>
+
+        <?php if ($btn): ?>
+            <button class="btn btn-primary" onclick="openContactForm()">
+                <i class="fas fa-phone"></i>
+                <?php out_content($btn); ?>
+            </button>
+        <?php endif; ?>
     </div>
-</section>
+</div>
