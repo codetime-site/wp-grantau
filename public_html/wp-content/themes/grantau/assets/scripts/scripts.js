@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize all animations and interactions
     initScrollAnimations();
     initMobileMenu();
-    // initCalculator();
+    initCalculator();
     initModal();
     initFormHandlers();
     initLazyLoading();
@@ -32,14 +32,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // если ширина окна меньше чем 768px то кнопка поменяет своего родителя 
     window.addEventListener('resize', resize);
     function resize() {
-        
+
         const secondParent = document.querySelector('.nav-menu > ul');
         const originParent = document.querySelector('.social-links');
         const btnThemes = document.querySelector('.testBtn');
 
         if (window.innerWidth <= 768) {
             secondParent.appendChild(btnThemes)
-        } else { 
+        } else {
             originParent.appendChild(btnThemes)
         }
     }
@@ -322,269 +322,7 @@ function initCalculator() {
     initAmethystCalculator();
 }
 
-function initAmethystCalculator() {
 
-    // кнопки с лева 
-    const projectButtons = document.querySelectorAll('.floor-btn');
-
-    // мини картинки 
-    const variantImages = document.querySelectorAll('.variant-image');
-
-    // центральные картинки 
-    const mainImage = document.getElementById('main-house-image');
-    const planImage = document.getElementById('house-plan-image');
-
-    // временно отключил  
-    const projectName = document.getElementById('project-name');
-    const projectDescription = document.getElementById('project-description');
-
-    // другая страница  
-    const h3 = document.getElementById('project-info__h3');
-    const h32 = document.getElementById('project-info__h32');
-    if (h3 && h32) {
-        var cur = h3.innerText;
-        var cur2 = h32.innerText;
-    }
-
-    // текстовый контент 
-    const specEntrance = document.getElementById('spec-entrance');
-    const specBoiler = document.getElementById('spec-boiler');
-    const specBedrooms = document.getElementById('spec-bedrooms');
-    const specBathrooms = document.getElementById('spec-bathrooms');
-    const specKitchen = document.getElementById('spec-kitchen');
-
-    // Project data
-    const projectData = {
-        'armitis': {
-            name: 'АРМИТИС',
-            description: 'Элегантный двухэтажный дом с современной архитектурой. Просторные комнаты, панорамные окна и продуманная планировка делают этот проект идеальным для комфортной семейной жизни.',
-            mainImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop&crop=center',
-            planImage: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=500&h=350&fit=crop&crop=center',
-            text: `Проект "Армитис" был разработан нашей командой архитекторов и инженеров в течение 6 месяцев. Мы начали санализа потребностей современной семьи`,
-            specs: {
-                area: 'ПЛОЩАДЬ ДОМА 125 М²',
-                entrance: 'Вх. группа',
-                boiler: 'Котельная',
-                bedrooms: '3 спальни',
-                bathrooms: '2 сан/узла',
-                kitchen: 'Кухня-гостиная'
-            }
-        },
-        'agat': {
-            name: 'АГАТ',
-            description: 'Современный одноэтажный дом в скандинавском стиле. Функциональная планировка, высокие потолки и большие окна создают ощущение простора и наполняют дом естественным светом.',
-            mainImage: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop&crop=center',
-            planImage: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=500&h=350&fit=crop&crop=center',
-            text: `Проект ${this.name} был разработан нашей командой архитекторов и инженеров в течение 6 месяцев. Мы начали санализа потребностей современной семьи`,
-            specs: {
-                area: 'ПЛОЩАДЬ ДОМА 110 М²',
-                entrance: 'Вх. группа',
-                boiler: 'Котельная',
-                bedrooms: '2 спальни',
-                bathrooms: '1 сан/узел',
-                kitchen: 'Отдельная кухня'
-            }
-        },
-        'ametist': {
-            name: 'АМЕТИСТ',
-            description: 'Роскошный двухэтажный дом в средиземноморском стиле. Просторная терраса, высокие потолки и изысканные детали создают атмосферу итальянской виллы.',
-            mainImage: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&h=400&fit=crop&crop=center',
-            planImage: 'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=500&h=350&fit=crop&crop=center',
-            text: `Проект ${this.name} был разработан нашей командой архитекторов и инженеров в течение 6 месяцев. Мы начали санализа потребностей современной семьи`,
-            specs: {
-                area: 'ПЛОЩАДЬ ДОМА 180 М²',
-                entrance: 'Вх. группа',
-                boiler: 'Котельная',
-                bedrooms: '4 спальни',
-                bathrooms: '3 сан/узла',
-                kitchen: 'Кухня-столовая'
-            }
-        },
-        'rubin': {
-            name: 'РУБИН',
-            description: 'Компактный и экологичный дом в скандинавском стиле. Минималистичный дизайн, натуральные материалы и энергоэффективные решения делают этот дом идеальным для ценителей экостиля.',
-            mainImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop&crop=center',
-            planImage: 'https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=500&h=350&fit=crop&crop=center',
-            text: `Проект ${this.name} был разработан нашей командой архитекторов и инженеров в течение 6 месяцев. Мы начали санализа потребностей современной семьи`,
-            specs: {
-                area: 'ПЛОЩАДЬ ДОМА 95 М²',
-                entrance: 'Вх. группа',
-                boiler: 'Котельная',
-                bedrooms: '2 спальни',
-                bathrooms: '1 сан/узел',
-                kitchen: 'Кухня-гостиная'
-            }
-        },
-        'almaz': {
-            name: 'АЛМАЗ',
-            description: 'Просторный дом с мансардой, сочетающий классическую архитектуру и современные технологии. Большие окна и открытая планировка создают ощущение легкости и простора.',
-            mainImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop&crop=center',
-            planImage: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=500&h=350&fit=crop&crop=center',
-            text: `Проект ${this.name} был разработан нашей командой архитекторов и инженеров в течение 6 месяцев. Мы начали санализа потребностей современной семьи`,
-            specs: {
-                area: 'ПЛОЩАДЬ ДОМА 140 М²',
-                entrance: 'Вх. группа',
-                boiler: 'Котельная',
-                bedrooms: '3 спальни',
-                bathrooms: '2 сан/узла',
-                kitchen: 'Кухня-гостиная'
-            }
-        },
-        'moonstone': {
-            name: 'ЛУННЫЙ КАМЕНЬ',
-            description: 'Уютный одноэтажный дом с террасой, идеально подходящий для небольшой семьи. Продуманная планировка и качественные материалы обеспечивают комфорт и долговечность.',
-            mainImage: 'https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=600&h=400&fit=crop&crop=center',
-            planImage: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=500&h=350&fit=crop&crop=center',
-            text: `Проект ${this.name} был разработан нашей командой архитекторов и инженеров в течение 6 месяцев. Мы начали санализа потребностей современной семьи`,
-            specs: {
-                area: 'ПЛОЩАДЬ ДОМА 85 М²',
-                entrance: 'Вх. группа',
-                boiler: 'Котельная',
-                bedrooms: '2 спальни',
-                bathrooms: '1 сан/узел',
-                kitchen: 'Кухня-гостиная'
-            }
-        }
-    };
-
-    // Variant images for each project
-    const variantImagesData = {
-        'armitis': [
-            'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=200&h=150&fit=crop&crop=center',
-            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=200&h=150&fit=crop&crop=center',
-            'https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=200&h=150&fit=crop&crop=center'
-        ],
-        'agat': [
-            'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=200&h=150&fit=crop&crop=center',
-            'https://images.unsplash.com/photo-1564013434775-f71db0030976?w=200&h=150&fit=crop&crop=center',
-            'https://images.unsplash.com/photo-1564013411270-43d32ba75cd1?w=200&h=150&fit=crop&crop=center'
-        ],
-        'ametist': [
-            'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=200&h=150&fit=crop&crop=center',
-            'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=150&fit=crop&crop=center',
-            'https://images.unsplash.com/photo-1576941089067-2de3c901e126?w=200&h=150&fit=crop&crop=center'
-        ],
-        'rubin': [
-            'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&h=150&fit=crop&crop=center',
-            'https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=200&h=150&fit=crop&crop=center',
-            'https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=200&h=150&fit=crop&crop=center'
-        ],
-        'almaz': [
-            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=200&h=150&fit=crop&crop=center',
-            'https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=200&h=150&fit=crop&crop=center',
-            'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=200&h=150&fit=crop&crop=center'
-        ],
-        'moonstone': [
-            'https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=200&h=150&fit=crop&crop=center',
-            'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=200&h=150&fit=crop&crop=center',
-            'https://images.unsplash.com/photo-1564013434775-f71db0030976?w=200&h=150&fit=crop&crop=center'
-        ]
-    };
-
-    // Function to update project content
-    function updateProjectContent(projectKey) {
-        const project = projectData[projectKey];
-        if (project) {
-            // Update project name and description
-            projectName.textContent = project.name;
-            projectDescription.textContent = project.description;
-
-            // проверка 
-            if (h3 && h32) {
-                h3.textContent = cur + "  " + project.name;
-                h32.textContent = cur2 + " для проекта " + project.name;
-            }
-
-            // Update main and plan images with fade effect
-            mainImage.style.opacity = '0';
-            planImage.style.opacity = '0';
-
-            setTimeout(() => {
-                mainImage.src = project.mainImage;
-                mainImage.style.transition = 'opacity 0.5s ease';
-                mainImage.style.opacity = '1';
-
-                planImage.src = project.planImage;
-                planImage.style.transition = 'opacity 0.5s ease';
-                planImage.style.opacity = '1';
-            }, 300);
-
-            // текстовый контент 
-            document.getElementById('specs-area').innerHTML = project.specs.area + '<sup>2</sup>';
-            document.getElementById('spec-entrance').textContent = project.specs.entrance;
-            document.getElementById('spec-boiler').textContent = project.specs.boiler;
-            document.getElementById('spec-bedrooms').textContent = project.specs.bedrooms;
-            document.getElementById('spec-bathrooms').textContent = project.specs.bathrooms;
-            document.getElementById('spec-kitchen').textContent = project.specs.kitchen;
-
-            // Update variant images
-            const variants = variantImagesData[projectKey];
-            variantImages.forEach((variant, index) => {
-                if (variants && variants[index]) {
-                    variant.querySelector('img').src = variants[index];
-                }
-            });
-        }
-    }
-
-    // Project buttons functionality
-    projectButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const projectKey = this.getAttribute('data-project');
-
-
-            // Remove active class from all buttons
-            projectButtons.forEach(btn => btn.classList.remove('active'));
-
-            // Add active class to clicked button
-            this.classList.add('active');
-
-            // Add click animation
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-
-            // Update project content
-            updateProjectContent(projectKey);
-        });
-    });
-
-    // Variant images functionality
-    variantImages.forEach((variant, index) => {
-        variant.addEventListener('click', function () {
-            // Get active project
-            const activeProject = document.querySelector('.floor-btn.active').getAttribute('data-project');
-            const variants = variantImagesData[activeProject];
-
-            if (variants && variants[index]) {
-                // Update main image
-                mainImage.style.opacity = '0';
-                setTimeout(() => {
-                    mainImage.src = variants[index].replace('w=200&h=150', 'w=600&h=400');
-                    mainImage.style.transition = 'opacity 0.3s ease';
-                    mainImage.style.opacity = '1';
-                }, 150);
-            }
-
-            // Add selection effect
-            variantImages.forEach(v => v.style.border = 'none');
-            this.style.border = '3px solid #d4af37';
-        });
-
-        // Add hover effect
-        variant.addEventListener('mouseenter', function () {
-            this.style.transform = 'scale(1.05)';
-        });
-
-        variant.addEventListener('mouseleave', function () {
-            this.style.transform = 'scale(1)';
-        });
-    });
-
-    // Initialize with first project
-    updateProjectContent('armitis');
-}
 
 // Function to open gift form modal
 function openGiftForm() {

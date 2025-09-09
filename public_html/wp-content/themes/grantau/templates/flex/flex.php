@@ -1,4 +1,5 @@
-<?php while (have_rows("plex_page")):the_row(); ?>
+<?php while (have_rows("plex_page")):
+    the_row(); ?>
 
     <?php if (get_row_layout() == "flex_main_title"): ?>
         <?php $title = get_sub_field('title'); ?>
@@ -26,10 +27,7 @@
     <?php elseif (get_row_layout() === "flex_bank"): ?>
         <section class="bank-partners-section">
             <div class="container">
-                <div class="section-header">
-                    <h2><?php echo wp_kses_post($title) ?></h2>
-                </div>
-                <div class="section-divider"></div>
+                <?php get_my_title($title); ?>
                 <?php get_template_part("templates/bank"); ?>
             </div>
         </section>
@@ -51,10 +49,33 @@
             </div>
         </section>
 
+    <?php elseif (get_row_layout() === "flex_technology"): ?>
+        <section class="technology-section">
+            <div class="container">
+                <?php get_my_title($title); ?>
+                <?php get_template_part("templates/technology"); ?>
+            </div>
+        </section>
+
+    <?php elseif (get_row_layout() === "flex_calc_home"): ?>
+        <section class="calculator-section" id="calculator">
+            <div class="container">
+                <?php get_template_part("templates/calculate_home"); ?>
+            </div>
+        </section>
+
+    <?php elseif (get_row_layout() === "flex_gift"): ?>
+        <section class="gift-section">
+            <div class="container">
+                <?php get_template_part("templates/gift"); ?>
+            </div>
+        </section>
+
+    <?php elseif (get_row_layout() === "flex_galary"): ?>
+        <?php get_template_part("templates/our_project"); ?>
 
     <?php elseif (get_row_layout() === "flex_post"): ?>
         <?php get_template_part("templates/flex/flex_single"); ?>
 
     <?php endif; ?>
-
 <?php endwhile; ?>
