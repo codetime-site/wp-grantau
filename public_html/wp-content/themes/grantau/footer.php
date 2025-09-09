@@ -21,18 +21,29 @@
 
             <div class="footer-section">
                 <h4>Контакты</h4>
-                <p><i class="fas fa-phone"></i> 8 (987) 414-60-60</p>
-                <p><i class="fas fa-envelope"></i> grantau.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> г. Казань, РТ</p>
+                <div class="con">
+                    <div class="con_text">
+                        <p><i class="fas fa-phone"></i> 8 (987) 414-60-60</p>
+                        <p><i class="fas fa-envelope"></i> gu_gap@mail.ru</p>
+                        <p><i class="fas fa-map-marker-alt"></i> г. Казань, РТ</p>
+                        <a href="https://t.me/grantau"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                        <a href="https://wa.me/79874146060"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                    <div class="con_qr">
+                        <img src="http://grantau.codetime.site/wp-content/uploads/2025/09/screenshot_2025-09-09_083558-removebg-preview.png"
+                            alt="">
+                    </div>
+                </div>
+
             </div>
 
-            <div class="footer-section">
+            <!-- <div class="footer-section">
                 <h4>Социальные сети</h4>
                 <div class="footer-social">
                     <a href="https://t.me/grantau"><i class="fab fa-telegram-plane"></i> Telegram</a>
                     <a href="https://wa.me/79874146060"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                 </div>
-            </div>
+            </div> -->
 
             <div class="footer-section">
                 <h4>Режим работы</h4>
@@ -42,11 +53,10 @@
         </div>
 
         <div class="footer-bottom">
-            <a href="copyright.php">&copy; 2024 ГранТау. Все права защищены.</a>
+            <p>&copy; <?php echo date('Y'); ?> Грантау. Все права защищены.</p>
         </div>
     </div>
-       <p>&copy; <?php echo date('Y'); ?> Грантау. Все права защищены.</p>
-    <?php wp_footer(); ?> 
+    <?php wp_footer(); ?>
 </footer>
 
 

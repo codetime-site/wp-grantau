@@ -1,13 +1,10 @@
-
 <!DOCTYPE html>
-<html lang="ru">
-
+<html lang="<?php bloginfo('language'); ?>">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="<?php echo bloginfo( "charset" )?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ГранТау - Фундамент вашего счастья | Строительство кирпичных домов в Казани</title>
-    <meta name="description" content="Строительство кирпичных домов под ключ в Казани и РТ. Более 20 лет опыта, гарантия 5 лет, 350+ построенных домов.">
-    <!-- <link rel="stylesheet" href="assets/css/style.min.css"> -->
+    <title><?php echo bloginfo( "name" )?></title>
+    <meta name="description" content="<?php echo bloginfo( "description" )?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Oswald:wght@200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">

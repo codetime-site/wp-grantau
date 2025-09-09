@@ -74,6 +74,9 @@
     <?php elseif (get_row_layout() === "flex_galary"): ?>
         <?php get_template_part("templates/our_project"); ?>
 
+    <?php elseif (get_row_layout() === "setting_maps"): ?>
+        <?php get_template_part("templates/map"); ?>
+
     <?php elseif (get_row_layout() === "flex_post"): ?>
         <?php get_template_part("templates/flex/flex_single"); ?>
 
