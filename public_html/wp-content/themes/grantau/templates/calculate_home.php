@@ -1,15 +1,16 @@
 <?php
 $title = get_sub_field('title');
+$subscribe = get_sub_field('subscribe');
 $subtitle = get_sub_field('sub_title');
 $btn = get_sub_field('btn');    
 $rep_content = "rep_option";
 ?>
+<?php ?>
 
 <?php $main_title = get_query_var('title'); ?>
-<?php $subscribe = get_query_var('subscribe'); ?>
 
 <div class="section-header">
-    <h2><?php echo esc_html($main_title); ?></h2>
+    <h2><?php echo esc_html($title); ?></h2>
     <p class="discount-text"><?php echo esc_html($subscribe); ?></p>
 </div>
 

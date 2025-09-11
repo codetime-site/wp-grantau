@@ -1,5 +1,5 @@
-<?php $title = get_query_var('title'); ?>
-<?php $subscribe = get_query_var('subscribe'); ?>
+<?php $title = get_sub_field('title'); ?>
+<?php $subscribe = get_sub_field('subscribe'); ?>
 
 <div class="section-header">
     <h2><?php out_content($title); ?></h2>
@@ -9,8 +9,7 @@
 <div class="suppliers-grid">
 
     <?php if (have_rows("rep_img")): ?>
-        <?php while (have_rows("rep_img")):
-            the_row(); ?>
+        <?php while (have_rows("rep_img")): the_row(); ?>
             <?php $img = get_sub_field('img'); ?>
             <?php $sub_title = get_sub_field('title'); ?>
 

@@ -128,6 +128,8 @@ button.testBtn
     text-align: center;
     padding: 10px;
 
+
+
 // определение секциии цветов темный 1,3,5 
 section:nth-child(2n+1) 
     background: linear-gradient(deg(sec), clr(blck) 0%, clr(blck_2) 100%);
@@ -135,6 +137,22 @@ section:nth-child(2n+1)
 // определение секциии цветов темный 2,4,6 
 section:nth-child(2n)
     background: linear-gradient(deg(sec), clr(blck_3) 0%, clr(blck_2) 100%);
+
+// для флекс 
+.bg_color_black
+     background: linear-gradient(deg(sec), clr(blck) 0%, clr(blck_2) 100%);
+    
+.bg_color_some_black
+    background: linear-gradient(deg(sec), clr(blck_3) 0%, clr(blck_2) 100%);
+
+.bg_color_default
+    background: inherit
+
+div.nonclass .section-header
+    padding-top: 25px 
+
+div.nonclass .maps  
+    padding-bottom: 2em;
 
 section 
     padding 6em 0
@@ -169,6 +187,8 @@ button#btnUpper::before
     top: 25%;
     transform: translateY(-50%);
 
+
+    padding-top: 25px 
 
 +below(t)
     button.btnUpper 

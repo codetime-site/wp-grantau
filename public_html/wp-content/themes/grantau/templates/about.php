@@ -1,9 +1,10 @@
 <?php
-$title = get_query_var('title');
+$title = get_sub_field('title');
 $text = get_sub_field('text');
 $logo = get_sub_field('logo');
 $btn = get_sub_field('btn');
 $btn_link = get_sub_field('btn_link');
+set_query_var( 'link_obaut', $btn_link );
 $sub_title = get_sub_field('sub_title');
 ?>
 

@@ -6,15 +6,10 @@
         <div class="footer-content">
             <div class="footer-section">
                 <div class="footer-logo">
-                    <div class="footer-logo-icon">
-                        <!-- <i class="fas fa-home"></i> -->
-                        <img src="assets/img/logo.png" alt="">
-                    </div>
-
+                    <?php get_template_part('contacts/logo'); ?>
                     <div>
-                        <h4>ГранТау</h4>
-                        <p>Фундамент вашего счастья</p>
-                        <p> <b>ИНН</b>1686050100</p>
+                        <?php get_template_part('contacts/title'); ?>
+                        <?php get_template_part('contacts/subtitle'); ?>
                     </div>
                 </div>
             </div>
@@ -23,37 +18,28 @@
                 <h4>Контакты</h4>
                 <div class="con">
                     <div class="con_text">
-                        <p><i class="fas fa-phone"></i> 8 (987) 414-60-60</p>
-                        <p><i class="fas fa-envelope"></i> gu_gap@mail.ru</p>
-                        <p><i class="fas fa-map-marker-alt"></i> г. Казань, РТ</p>
-                        <a href="https://t.me/grantau"><i class="fab fa-telegram-plane"></i> Telegram</a>
-                        <a href="https://wa.me/79874146060"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <?php get_template_part('contacts/phone'); ?>
+                        <?php get_template_part('contacts/email'); ?>
+                        <?php get_template_part('contacts/inn'); ?>
+                        <?php get_template_part('contacts/adress'); ?>
+                        <div class="con__social">
+                            <?php get_template_part('contacts/socials'); ?>
+                        </div>
                     </div>
-                    <div class="con_qr">
+                    <div class="con_qr logo-icon">
                         <img src="http://grantau.codetime.site/wp-content/uploads/2025/09/screenshot_2025-09-09_083558-removebg-preview.png"
                             alt="">
                     </div>
                 </div>
 
             </div>
-
-            <!-- <div class="footer-section">
-                <h4>Социальные сети</h4>
-                <div class="footer-social">
-                    <a href="https://t.me/grantau"><i class="fab fa-telegram-plane"></i> Telegram</a>
-                    <a href="https://wa.me/79874146060"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                </div>
-            </div> -->
-
             <div class="footer-section">
-                <h4>Режим работы</h4>
-                <p>Пн-Пт: 9:00 - 18:00</p>
-                <p>Сб-Вс: 10:00 - 16:00</p>
+                <?php get_template_part('contacts/work_time'); ?>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; <?php echo date('Y'); ?> Грантау. Все права защищены.</p>
+            <a href="https://grantau.codetime.site/?page_id=3" target="_blank">&copy; <?php echo date('Y'); ?> Грантау. Все права защищены.</a >
         </div>
     </div>
     <?php wp_footer(); ?>

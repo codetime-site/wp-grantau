@@ -1,6 +1,9 @@
-<?php $rep_content = "rep_content"; ?>
+<?php $title = get_sub_field('title'); ?>
 <?php $btn = get_sub_field('btn'); ?>
 
+<?php $rep_content = "rep_content"; ?>
+
+<?php get_template_part('components/title', null, $title); ?>
 <?php if (have_rows($rep_content)): ?>
     <div class="technology-grid">
         <?php while (have_rows($rep_content)): the_row() ?>

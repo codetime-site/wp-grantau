@@ -322,6 +322,158 @@ function initCalculator() {
     initAmethystCalculator();
 }
 
+   function initAmethystCalculator() {
+
+        // кнопки с лева 
+        const projectButtons = document.querySelectorAll('.floor-btn');
+
+        // мини картинки 
+        const variantImages = document.querySelectorAll('.variant-image');
+
+        // центральные картинки 
+        const mainImage = document.getElementById('main-house-image');
+        const planImage = document.getElementById('house-plan-image');
+
+        // временно отключил  
+        const projectName = document.getElementById('project-name');
+        const projectDescription = document.getElementById('project-description');
+
+        // другая страница  
+        const h3 = document.getElementById('project-info__h3');
+        const h32 = document.getElementById('project-info__h32');
+        if (h3 && h32) {
+            var cur = h3.innerText;
+            var cur2 = h32.innerText;
+        }
+
+        // переменные определены в файле our_project
+        // текстовый контент 
+        const specArea = document.getElementById('specs-area');
+        const specEntrance = document.getElementById('spec-entrance');
+        const specBoiler = document.getElementById('spec-boiler');
+        const specBedrooms = document.getElementById('spec-bedrooms');
+        const specBathrooms = document.getElementById('spec-bathrooms');
+        const specKitchen = document.getElementById('spec-kitchen');
+
+        const projectData = {};
+    
+        key.forEach((projKey, index) => {
+            projectData[projKey] = {
+                name: btn_name[index],
+                mainImage: main_img[index],
+                planImage: plan_img[index],
+                variants: myVariants[index] || [],  // Массив вариантов для этого проекта
+                specs: {
+                    area: textCon[index]['area'],
+                    entrance: textCon[index]['entrance'],
+                    boiler: textCon[index]['boiler'],
+                    bedrooms: textCon[index]['bedrooms'],
+                    bathrooms: textCon[index]['bathrooms'],
+                    kitchen: textCon[index]['kitchen']
+                }
+            };
+        })
+
+        console.log(projectData);
+        function updateProjectContent(projectKey) {
+            const project = projectData[projectKey];
+            if (project) {
+                // Update project name and description
+                projectName.textContent = project.name;
+                projectDescription.textContent = project.description;
+
+                // проверка 
+                if (h3 && h32) {
+                    h3.textContent = cur + "  " + project.name;
+                    h32.textContent = cur2 + " для проекта " + project.name;
+                }
+
+                // Update main and plan images with fade effect
+                mainImage.style.opacity = '0';
+                planImage.style.opacity = '0';
+
+                setTimeout(() => {
+                    mainImage.src = project.mainImage;
+                    mainImage.style.transition = 'opacity 0.5s ease';
+                    mainImage.style.opacity = '1';
+
+                    planImage.src = project.planImage;
+                    planImage.style.transition = 'opacity 0.5s ease';
+                    planImage.style.opacity = '1';
+                }, 300);
+
+                specArea.innerHTML = project.specs.area + '<sup></sup>';
+                specEntrance.textContent = project.specs.entrance;
+                specBoiler.textContent = project.specs.boiler;
+                specBedrooms.textContent = project.specs.bedrooms;
+                specBathrooms.textContent = project.specs.bathrooms;
+                specKitchen.textContent = project.specs.kitchen;
+
+                // const variants = projectData.variants[projectKey];
+                variantImages.forEach((variant, index) => {
+                    variant.querySelector('img').src = project.variants[index];
+                });
+            }
+        }
+
+        // Project buttons functionality
+        projectButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const projectKey = this.getAttribute('data-project');
+
+                // Remove active class from all buttons
+                projectButtons.forEach(btn => btn.classList.remove('active'));
+
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                // Add click animation
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+
+                // Update project content
+                updateProjectContent(projectKey);
+            });
+        });
+
+        // Variant images functionality
+        variantImages.forEach((variant, index) => {
+            variant.addEventListener('click', function () {
+                // Get active project
+                const activeProject = document.querySelector('.floor-btn.active').getAttribute('data-project');
+                const projectItem = projectData[activeProject]
+                const variants = projectItem.variants
+
+                if (variants && variants[index]) {
+                    // Update main image
+                    mainImage.style.opacity = '0';
+                    setTimeout(() => {
+                        mainImage.src = variants[index].replace('w=200&h=150', 'w=600&h=400');
+                        mainImage.style.transition = 'opacity 0.3s ease';
+                        mainImage.style.opacity = '1';
+                    }, 150);
+                }
+
+                // Add selection effect
+                variantImages.forEach(v => v.style.border = 'none');
+                this.style.border = '3px solid #d4af37';
+            });
+
+            // Add hover effect
+            variant.addEventListener('mouseenter', function () {
+                this.style.transform = 'scale(1.05)';
+            });
+
+            variant.addEventListener('mouseleave', function () {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Initialize with first project
+        updateProjectContent('ametist');
+    }
 
 
 // Function to open gift form modal
