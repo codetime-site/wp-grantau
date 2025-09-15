@@ -1,6 +1,5 @@
 <?php $title = get_sub_field('title'); ?>
 <?php $btn = get_sub_field('btn'); ?>
-
 <?php $rep_content = "rep_content"; ?>
 
 <?php get_template_part('components/title', null, $title); ?>

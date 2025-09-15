@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
     // опредеояем верхний отступ 
-    const heig = document.querySelector('header').clientHeight;
-    const main = document.querySelectorAll('.paddingTop');
-    main.forEach(item => item.style.paddingTop = heig + 20 + "px");
+    // const heig = document.querySelector('header').clientHeight;
+    // const main = document.querySelectorAll('.paddingTop');
+    // main.forEach(item => item.style.paddingTop = heig + 20 + "px");
 
     //  тестовый вариянт 
     // changeParent.appendChild(btnThemes);
@@ -374,7 +374,6 @@ function initCalculator() {
             };
         })
 
-        console.log(projectData);
         function updateProjectContent(projectKey) {
             const project = projectData[projectKey];
             if (project) {

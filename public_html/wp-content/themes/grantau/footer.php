@@ -1,3 +1,4 @@
+<?php get_template_part('templates/contact_form')?>
 <div>
     <button id="btnUpper" class="btnUpper fontello-angle-up"></button>
 </div>
@@ -39,7 +40,8 @@
         </div>
 
         <div class="footer-bottom">
-            <a href="https://grantau.codetime.site/?page_id=3" target="_blank">&copy; <?php echo date('Y'); ?> Грантау. Все права защищены.</a >
+            <a href="https://grantau.codetime.site/?page_id=3" target="_blank">&copy; <?php echo date('Y'); ?> Грантау.
+                Все права защищены.</a>
         </div>
     </div>
     <?php wp_footer(); ?>
