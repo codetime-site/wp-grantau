@@ -90,8 +90,7 @@ div.hero-text
         font-size: 2.5em
 
 
-+below(tablet)
-        
++below(t)
     .hero-content 
         grid-template-columns: 1fr;
         text-align: center;
@@ -106,9 +105,19 @@ div.hero-text
         align-items: center;
     
     .hero-contact 
-        flex-direction: column;
-        gap: 2em
+        flex-direction: row;
+        gap: .5em
         text-align: center;
+        justify-content: center
+    
+    .phone-section
+        flex-direction: row
+    
+    .phone-section > .phone
+         font-size: 2em
+
+    .phone-section span
+        display: none
     
 +below(smallMobile)
 

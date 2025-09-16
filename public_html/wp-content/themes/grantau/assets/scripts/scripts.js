@@ -22,14 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Observe all elements with animation class
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-    // опредеояем верхний отступ 
-    // const heig = document.querySelector('header').clientHeight;
-    // const main = document.querySelectorAll('.paddingTop');
-    // main.forEach(item => item.style.paddingTop = heig + 20 + "px");
-
-    //  тестовый вариянт 
-    // changeParent.appendChild(btnThemes);
-    // если ширина окна меньше чем 768px то кнопка поменяет своего родителя 
     window.addEventListener('resize', resize);
     function resize() {
 
@@ -1003,6 +995,7 @@ function showNextProject() {
 }
 
 // Function to calculate house cost
+
 function calculateHouseCost() {
     // Get form values
     const area = parseFloat(document.getElementById('houseArea').value) || 0;
