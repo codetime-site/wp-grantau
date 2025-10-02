@@ -49,12 +49,13 @@
             </div>
         </section>
 
-    <?php elseif (get_row_layout() === "flex_calc_home"): ?>
-        <section class="calculator-section" id="calculator">
-            <div class="container">
-                <?php get_template_part("templates/calculate_home"); ?>
-            </div>
-        </section>
+        <?php /*elseif (get_row_layout() === "flex_calc_home"): ?>
+           <section class="calculator-section" id="calculator">
+               <div class="container">
+                   <?php get_template_part("templates/calculate_home"); ?>
+               </div>
+           </section>
+           <?php */ ?>
 
     <?php elseif (get_row_layout() === "flex_gift"): ?>
         <section class="gift-section">

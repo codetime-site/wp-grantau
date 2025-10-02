@@ -1,21 +1,18 @@
-.bank-partners-flex {
+.bank-partners-flex 
     display: flex;
     gap: 3rem;
     align-items: flex-start;
     margin: 3rem 0;
-}
 
-.banks-column {
+.banks-column 
     flex: 1;
-}
 
-.banks-grid {
+.banks-grid 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
     gap: 1.5rem;
-}
 
-.mortgage-help {
+.mortgage-help 
     flex: 1;
     background: clrgb(prim, 0.05)
     border: 1px solid clrgb(prim, 0.2);
@@ -23,39 +20,33 @@
     padding: 2.5rem;
     animation: fadeIn 1s ease-out;
     box-shadow: 0 15px 30px clrgb(blck, 0.3);
-}
 
-.mortgage-help h3 {
+.mortgage-help h3 
     font-size: 2rem;
     margin-bottom: 1.5rem;
     color clr(prim)
-}
 
-.mortgage-help p {
+.mortgage-help p 
     margin-bottom: 2rem;
     color clr(second_2);
     line-height: 1.8;
-}
 
-.mortgage-benefits {
+.mortgage-benefits 
     list-style: none;
     margin-bottom: 2rem;
-}
 
-.mortgage-benefits li {
+.mortgage-benefits li 
     display: flex;
     align-items: center;
     gap: 0.8rem;
     margin-bottom: 1rem;
     color clr(second_2);
-}
 
-.mortgage-benefits i {
+.mortgage-benefits i 
     color clr(prim)
     font-size: 1.2rem;
-}
 
-.bank-logo {
+.bank-logo 
     background: clrgb(second, 0.05);
     border-radius: 15px;
     padding: 1.5rem;
@@ -65,9 +56,8 @@
     transition: all 0.3s ease;
     aspect-ratio: 1;
     border: 1px solid clrgb(prim, 0.2);
-}
 
-.bank-icon {
+.bank-icon 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,47 +65,43 @@
     gap: 1rem;
     width: 100%;
     height: 100%;
-}
 
-.bank-icon i {
+// .bank-icon img 
+//     height: auto
+
+.bank-icon i 
     font-size: 2.5rem;
     color clr(prim)
     transition: all 0.5s ease;
-}
 
-.bank-icon span {
+.bank-icon span 
     font-size: 0.9rem;
     color clr(second);
     font-weight: 500;
     text-align: center;
     transition: all 0.3s ease;
-}
 
-.bank-logo:hover {
+.bank-logo:hover 
     transform: translateY(-5px);
     box-shadow: 0 15px 30px clrgb(prim, 0.3);
     BORDER-color clr(prim)
     background: clrgb(prim, 0.1);
-}
 
-.bank-logo:hover .bank-icon i {
+.bank-logo:hover .bank-icon i 
     transform: scale(1.2);
     color clr(second_3);
-}
 
-.bank-logo:hover .bank-icon span {
+.bank-logo:hover .bank-icon span 
     color clr(prim)
-}
 
 /* Gift Section */
-.gift-section {
+.gift-section 
     padding: 6rem 0;
     background: linear-gradient(135deg, clr(blck_2) 0%, clr(blck_3) 100%);
     position: relative;
     overflow: hidden;
-}
 
-.gift-section::before {
+.gift-section::before 
     content: '';
     position: absolute;
     top: 0;
@@ -125,23 +111,19 @@
     background: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&h=600&fit=crop') center/cover;
     opacity: 0.1;
     z-index: -1;
-}
 
-.gift-content {
+.gift-content 
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: flex-start;
-}
 
-
-.form-group {
+.form-group 
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
-}
 
-.form-group input {
+.form-group input 
     flex: 1;
     padding: 15px 20px;
     border: 2px solid clrgb(prim, 0.3);
@@ -150,24 +132,20 @@
     color clr(second);
     font-size: 1rem;
     transition: all 0.3s ease;
-}
 
-.form-group input:focus {
+.form-group input:focus 
     outline: none;
     BORDER-color clr(prim)
     box-shadow: 0 0 20px clrgb(prim, 0.3);
-}
 
-.form-group input::placeholder {
+.form-group input::placeholder 
     color: clrgb(second, 0.6);
-}
 
 +below(t)
     .banks-grid 
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 1rem;
     
-
 +below(650px)
     .bank-partners-flex
         flex-direction: column;

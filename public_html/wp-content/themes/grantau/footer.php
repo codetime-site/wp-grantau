@@ -1,4 +1,5 @@
-<?php get_template_part('templates/contact_form')?>
+
+<?php get_template_part('templates/contact_form') ?>
 <div>
     <button id="btnUpper" class="btnUpper fontello-angle-up"></button>
 </div>
